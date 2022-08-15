@@ -12,14 +12,14 @@ namespace ProfesoresApiDotnet.Models
         public string? Name { get; set; }
         [Required]
         [MaxLength(40)]
-        public DateTime DateBirth { get; set; }
+        public string? DateBirth { get; set; } //mes/día/año
         [Required]
+        [MaxLength(30)]
         public string? TypeInstructor { get; set; }
         [Required]
         public string? TypeCurrency { get; set; }
         public float PriceHour { get; set; }
-        [Required]
 
-        public ICollection<Lesson>? Lessons { get; set; }//un instructor tiene relacion con multiples lecciones impartidas
+        //public ICollection<Lesson>? Lessons { get; set; }//un instructor tiene relacion con multiples lecciones impartidas
     }
 }

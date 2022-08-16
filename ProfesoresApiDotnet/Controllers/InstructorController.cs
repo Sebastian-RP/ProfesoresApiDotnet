@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using ProfesoresApiDotnet.Models;
@@ -8,6 +9,7 @@ using System.Data.SqlClient;
 
 namespace ProfesoresApiDotnet.Controllers
 {
+    [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     [ApiController]
     public class InstructorController : ControllerBase

@@ -12,7 +12,7 @@ namespace ProfesoresApiDotnet.Models
         [Required]
         public int DurationLesson { get; set; } //minutos
         [Required]
-        public Instructor? Instructor { get; set; }//vinculacion de ambas tablas y llave foranea InstructorId
+        //public Instructor? Instructor { get; set; }//vinculacion de ambas tablas y llave foranea InstructorId
         public int InstructorId { get; set; }
     }
 }

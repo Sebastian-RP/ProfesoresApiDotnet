@@ -100,5 +100,35 @@ namespace ProfesoresApiDotnet.Controllers
 
             }
         }
+
+
+        [HttpPost]
+        [Route("Guardar")]
+        public IActionResult Guardar([FromBody] Lesson objeto)
+        {
+            try
+            {
+
+                using (var conexion = new SqlConnection(cadenaSQL))
+                {
+                    conexion.Open();
+                    var cmd = new SqlCommand("sp_guardar_lesson2", conexion);
+                    //cmd.Parameters.AddWithValue("codigoBarra", objeto.Id);
+                    cmd.Parameters.AddWithValue("lessonDate", objeto.LessonDate);
+                    cmd.Parameters.AddWithValue("durationLesson", objeto.DurationLesson);
+                    cmd.Parameters.AddWithValue("instructorId", objeto.InstructorId);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "agregado" });
+            }
+            catch (Exception error)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = error.Message });
+
+            }
+        }
     }
 }

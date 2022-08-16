@@ -14,7 +14,6 @@ namespace ProfesoresApiDotnet.Models
         [MaxLength(40)]
         public string? DateBirth { get; set; } //mes/día/año
         [Required]
-        [MaxLength(30)]
         public string? TypeInstructor { get; set; }
         [Required]
         public string? TypeCurrency { get; set; }

@@ -1,10 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProfesoresApiDotnet.Models
 {
-    [Table("Instructors")]
-    public class Instructor
+    public class monthlyHours
     {
         public int Id { get; set; }
         [Required]
@@ -18,8 +16,6 @@ namespace ProfesoresApiDotnet.Models
         [Required]
         public string? TypeCurrency { get; set; }
         public float PriceHour { get; set; }
-
-        //public ICollection<Lesson>? Lessons { get; set; }//un instructor tiene relacion con multiples lecciones impartidas
+        public float DurationLesson { get; set; }   
     }
 }
- 

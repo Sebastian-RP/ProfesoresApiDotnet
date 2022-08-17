@@ -8,8 +8,7 @@ namespace ProfesoresApiDotnet.Models
     {
         public int Id { get; set; }
         [MaxLength(16)]
-        public string? LessonDate { get; set; }
-        [Required]
+        public string? LessonDate { get; set; } 
         public int DurationLesson { get; set; } //minutos
         [Required]
         //public Instructor? Instructor { get; set; }//vinculacion de ambas tablas y llave foranea InstructorId

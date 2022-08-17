@@ -117,11 +117,12 @@ namespace ProfesoresApiDotnet.Controllers
                     cmd.Parameters.AddWithValue("lessonDate", objeto.LessonDate);
                     cmd.Parameters.AddWithValue("durationLesson", objeto.DurationLesson);
                     cmd.Parameters.AddWithValue("instructorId", objeto.InstructorId);
+
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
 
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "agregado" });
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "Clase agregado" });
             }
             catch (Exception error)
             {

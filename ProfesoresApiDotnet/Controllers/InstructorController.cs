@@ -14,6 +14,7 @@ namespace ProfesoresApiDotnet.Controllers
     [ApiController]
     public class InstructorController : ControllerBase
     {
+        //https://www.youtube.com/watch?v=-rhIFSDgFjk&t=293s&ab_channel=CodigoEstudiante
         private readonly string cadenaSQL;
 
         public InstructorController(IConfiguration config)
